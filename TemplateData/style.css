@@ -1,0 +1,162 @@
+
+/* 豆でオセロしてみた！ */
+/* Unity WebGL 画面サイズ自動対応 */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Unity表示領域 */
+#unity-container,
+#unity-container.unity-desktop,
+#unity-container.unity-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  transform: none;
+  overflow: hidden;
+  background: #000;
+}
+
+/* フルスクリーン領域 */
+#unity-fullscreen-container,
+.unity-mobile #unity-fullscreen-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ゲーム画面 */
+#unity-canvas,
+#unity-canvas.unity-mobile {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #231F20;
+  touch-action: none;
+  outline: none;
+}
+
+/* 読み込み画面 */
+#unity-loading-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
+/* ローディングバー */
+#unity-loading-bar {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Unityロゴ */
+#unity-logo {
+  width: 154px;
+  height: 130px;
+  background:
+    url('unity-logo-dark.png')
+    no-repeat center;
+}
+
+/* 読み込みゲージ背景 */
+#unity-progress-bar-empty {
+  width: 141px;
+  height: 18px;
+  margin-top: 10px;
+  margin-left: 6.5px;
+  background:
+    url('progress-bar-empty-dark.png')
+    no-repeat center;
+}
+
+/* 読み込みゲージ */
+#unity-progress-bar-full {
+  width: 0%;
+  height: 18px;
+  margin-top: 10px;
+  background:
+    url('progress-bar-full-dark.png')
+    no-repeat center;
+}
+
+/* フッター */
+#unity-footer {
+  display: none;
+}
+
+/* フッターロゴ */
+#unity-logo-title-footer {
+  float: left;
+  width: 102px;
+  height: 38px;
+  background:
+    url('unity-logo-title-footer.png')
+    no-repeat center;
+}
+
+/* ゲームタイトル */
+#unity-build-title {
+  float: right;
+  margin-right: 10px;
+  line-height: 38px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+/* フルスクリーンボタン */
+#unity-fullscreen-button {
+  cursor: pointer;
+  float: right;
+  width: 38px;
+  height: 38px;
+  background:
+    url('fullscreen-button.png')
+    no-repeat center;
+}
+
+/* 警告表示 */
+#unity-warning {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+  max-width: 90%;
+  padding: 10px;
+  background: white;
+  display: none;
+  z-index: 100;
+  text-align: center;
+}
